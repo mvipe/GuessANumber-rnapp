@@ -15,7 +15,8 @@ import NumberContainer from "../components/NumberContainer";
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  const rndNum = Math.floor(Math.random * (max - min) + min);
+  const rndNum = Math.floor(Math.random() * (max - min) + min);
+  console.log(rndNum);
   if (rndNum === exclude) {
     return generateRandomBetween(min, max, exclude);
   } else {
@@ -33,7 +34,7 @@ const GameScreen = (props) => {
       <Text>Opponent Guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
-        <Button title="LOWER" onPress={() => {}} />
+        <Button title="LOWER" onPress={} />
         <Button title="GREATER" />
       </Card>
     </View>
@@ -44,6 +45,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
+    marginTop: 20,
+    width: 300,
+    maxWidth: "80%",
   },
   screen: {
     flex: 1,
