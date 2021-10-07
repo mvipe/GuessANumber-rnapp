@@ -9,6 +9,8 @@ import {
   Keyboard,
   Alert,
 } from "react-native";
+import Card from "../components/Card";
+import NumberContainer from "../components/NumberContainer";
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -26,9 +28,28 @@ const GameScreen = (props) => {
     generateRandomBetween(1, 100, props.userChoice)
   );
 
-  return <View></View>;
+  return (
+    <View style={styles.screen}>
+      <Text>Opponent Guess</Text>
+      <NumberContainer>{currentGuess}</NumberContainer>
+      <Card style={styles.buttonContainer}>
+        <Button title="LOWER" onPress={() => {}} />
+        <Button title="GREATER" />
+      </Card>
+    </View>
+  );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  screen: {
+    flex: 1,
+    padding: 10,
+    alignItems: "center",
+  },
+});
 
 export default GameScreen;
