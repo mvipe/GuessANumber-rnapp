@@ -8,7 +8,12 @@ const GameOver = (props) => {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={require("../assets/success.png")}
+          /////  loading image from locally
+          //   source={require("../assets/success.png")}
+
+          /// loading image from web
+          fadeDuration={300}
+          source={{ uri: "https://unsplash.com/photos/By-tZImt0Ms" }}
           width="300"
           resizeMode="cover"
         />
