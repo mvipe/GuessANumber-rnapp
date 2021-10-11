@@ -16,6 +16,8 @@ import MainButton from "../components/MainButton";
 import NumberContainer from "../components/NumberContainer";
 import Colors from "../constants/Colors";
 
+import { Ionicons } from "@expo/vector-icons";
+
 const StartGameScreen = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [confirmed, setConfirmed] = useState(false);
@@ -55,6 +57,7 @@ const StartGameScreen = (props) => {
         <Text>You Selected</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
         <MainButton onPress={() => props.onStartGame(selectedNumber)}>
+          <Ionicons name="md-add" size={24} />
           START GAME
         </MainButton>
       </Card>
